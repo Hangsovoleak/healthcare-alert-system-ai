@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&family=Noto+Sans+Khmer:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Kantumruy Pro", "Noto Sans Khmer", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Kantumruy Pro", "Noto Sans Khmer", "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+
+  --color-triage-red: #ef4444;
+  --color-triage-yellow: #f59e0b;
+  --color-triage-green: #10b981;
+}
+
+/* Custom animations and scrollbars */
+@layer base {
+  body {
+    @apply font-sans bg-[#f8fafc] text-slate-900 antialiased selection:bg-emerald-100 selection:text-emerald-900;
+  }
+}
+
+/* Pulse effect for dispatched status */
+.pulse-emerald {
+  animation: pulse-em 2s infinite;
+}
+
+@keyframes pulse-em {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.05); }
+}
